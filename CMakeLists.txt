@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 project(fix-dtb-smartio CXX)
+set(PACKAGE_AUTHOR "Andrei Errapart")
 
 # Set the version information here
 set(MAJOR_VERSION 1)
