@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="FixDtbSmartio.cpp" />
+    <ClCompile Include="..\dtc\libfdt\fdt.c">
+      <Filter>libfdt</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="libfdt">
+      <UniqueIdentifier>{804564fc-6583-4685-aa89-bd0eec952baf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\dtc\libfdt\fdt.h">
+      <Filter>libfdt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dtc\libfdt\libfdt.h">
+      <Filter>libfdt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dtc\libfdt\libfdt_env.h">
+      <Filter>libfdt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dtc\libfdt\libfdt_internal.h">
+      <Filter>libfdt</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+  </ItemGroup>
+</Project>
