@@ -18,17 +18,18 @@ set(CPACK_RESOURCE_FILE_README "${CMAKE_CURRENT_SOURCE_DIR}/README.md")
 set(CPACK_DEBIAN_PACKAGE_DEPENDS "libcrypto++8")
 set(CPACK_DEBIAN_FILE_NAME DEB-DEFAULT) # otherwise we will get _Linux.deb file and not _amd64.deb.
 
-
-find_package(PkgConfig)
-find_package(Threads)
-# TODO: check for libcrypto++
+# Requirements
+find_package(PkgConfig) # for the pkg_check_modules to work
+pkg_check_modules(CRYPTOXX REQUIRED "libcrypto++")
+if(NOT CRYPTOXX_FOUND)
+    message(FATAL_ERROR "libcrypto++ required, but not found")
+endif()
 
 # fix-dtb-smartio
 add_executable(fix-dtb-smartio dtc/dtc.c src/FixDtbSmartio.cpp)
-target_link_libraries(fix-dtb-smartio crypto++)
+target_link_libraries(fix-dtb-smartio ${CRYPTOXX_LIBRARIES})
 target_compile_options(fix-dtb-smartio PUBLIC -I${CMAKE_CURRENT_SOURCE_DIR}/dtc/libfdt)
 install(TARGETS fix-dtb-smartio RUNTIME DESTINATION bin)
-
 
 # Debian package
 include(CPack)
