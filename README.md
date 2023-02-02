@@ -18,7 +18,7 @@ Required packages:
 Complete list of steps to build Debian packages:
 ```
 sudo apt install libcrypto++-dev
-git clone http://gitlocal.trenz.local/trenz-sw/fix-dtb-smartio.git
+git clone git@github.com:Trenz-Electronic/fix-dtb-smartio.git
 cd fix-dtb-smartio
 git submodule init .
 git submodule update
