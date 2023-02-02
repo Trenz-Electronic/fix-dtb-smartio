@@ -16,6 +16,7 @@ set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Andrei Errapart")
 set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
 set(CPACK_RESOURCE_FILE_README "${CMAKE_CURRENT_SOURCE_DIR}/README.md")
 set(CPACK_DEBIAN_PACKAGE_DEPENDS "libcrypto++8")
+set(CPACK_DEBIAN_FILE_NAME DEB-DEFAULT) # otherwise we will get _Linux.deb file and not _amd64.deb.
 
 
 find_package(PkgConfig)
