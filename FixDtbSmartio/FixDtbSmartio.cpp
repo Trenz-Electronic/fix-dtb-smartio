@@ -1,7 +1,8 @@
 // vim: tabstop=2:shiftwidth=2:expandtab:
-/* \file FixDtbSmartio.cpp
-   \brief FixDtbSmartio reorders device tree nodes in image.ub file such that the bigges buffers come first.
- */
+/// \file FixDtbSmartio.cpp
+/// \brief FixDtbSmartio reorders device tree nodes in image.ub file such that the bigges buffers come first.
+/// \copyright  SPDX: GPL-2.0 2023 Trenz Electronic GmbH
+
 #if defined(_MSC_VER)
 #include <windows.h>
 #include <bcrypt.h>
