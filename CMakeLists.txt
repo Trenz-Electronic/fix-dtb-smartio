@@ -12,11 +12,14 @@ set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Fix dtb for use with smartio"
 )
 set(CPACK_PACKAGE_VENDOR "Trenz Electronic GmbH")
 set(CPACK_PACKAGE_CONTACT "a.errapart@trenz-electronic.de")
-set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Andrei Errapart")
+set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Andrei Errapart <${CPACK_PACKAGE_CONTACT}>")
 set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
 set(CPACK_RESOURCE_FILE_README "${CMAKE_CURRENT_SOURCE_DIR}/README.md")
 set(CPACK_DEBIAN_PACKAGE_DEPENDS "libcrypto++8")
 set(CPACK_DEBIAN_FILE_NAME DEB-DEFAULT) # otherwise we will get _Linux.deb file and not _amd64.deb.
+set(CPACK_STRIP_FILES YES)
+set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS YES)
+
 
 # Requirements
 find_package(PkgConfig) # for the pkg_check_modules to work
